@@ -44,7 +44,7 @@ a:hover {
 
 .navigation.sticky {
   padding: 0;
-  background: red;
+  background: #f4f4f4;
 }
 
 .navigation img {
@@ -76,13 +76,12 @@ a:hover {
   height: 600px;
   width: 100%;
 }
-.mapa{
-  background-color: greenyellow;
+#map{
+  width: 100vw;
   height: 600px;
-  width: 100%;
 }
 .datos{
-  background-color:gold;
+
   height: 600px;
   width: 100%;
 }
