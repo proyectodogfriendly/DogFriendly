@@ -300,12 +300,23 @@ window.onload = () =>{
   axios.get('http://localhost:3000/api/places')
   .then(response =>{
     //   console.log(response.data)
+
+//imagen de icono
+    var myimage = {
+      url: '/images/huella2.png', //ruta de la imagen
+      size: new google.maps.Size(30, 30), //tamaño de la imagen
+    //   origin: new google.maps.Point(0,0), //origen de la iamgen
+    //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+    //   anchor: new google.maps.Point(0,0) 
+     };
+// fin imagen de icono
     for( i = 0; i < response.data.length; i++ ) {
          var position = new google.maps.LatLng(response.data[i].position.coordinates[1], response.data[i].position.coordinates[0]);
         //  bounds.extend(position);
          marker = new google.maps.Marker({
              position,
              map,
+             icon: myimage,
              title: response.data[i].name
                 });
           }
