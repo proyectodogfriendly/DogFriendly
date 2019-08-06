@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const placeSchema = new Schema(
+const areaSchema = new Schema(
   {
-    name: String,
-    address: String,
     district: String,
-    description: String,
+    address: String,
     position: { type: { type: String }, coordinates: [Number] }
   },
   {
@@ -16,5 +14,5 @@ const placeSchema = new Schema(
   }
 );
 
-placeSchema.index({ location: "2dsphere" });
-module.exports = mongoose.model("Place", placeSchema);
+areaSchema.index({ location: "2dsphere" });
+module.exports = mongoose.model("Area", areaSchema);
