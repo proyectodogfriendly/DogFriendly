@@ -15,9 +15,10 @@ mongoose
   .catch(err => {
     console.error("Error connecting to mongo", err);
   });
+ 
 
-const dbName = "areas";
-mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true });
+// const dbName = "areas";
+// mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true });
 
 const areas = [
   {
@@ -940,12 +941,17 @@ const areas = [
       coordinates: [-3.69627050511614, 40.3638358433165]
     }
   }
-];
+]
 
-Area.create(areas, err => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Created ${areas.length} areas`);
-  mongoose.connection.close();
-});
+  Area.create(areas, err => {
+    if (err) {
+      throw err;
+    }
+   
+    console.log(`Created ${areas.length} areas`);
+    mongoose.connection.close();
+  });
+
+
+
+

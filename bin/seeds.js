@@ -21,8 +21,8 @@ mongoose
     console.error("Error connecting to mongo", err);
   });
 
-const dbName = "places";
-mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true });
+// const dbName = "places";
+// mongoose.connect(`mongodb://localhost/${dbName}`, { useNewUrlParser: true });
 
 const places = [
   {
@@ -867,15 +867,19 @@ const places = [
       coordinates: [-3.703024, 40.407644]
     }
   }
-];
+]
 
-Place.create(places, err => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Created ${places.length} places`);
-  mongoose.connection.close();
-});
+
+  Place.create(places, err => {
+    if (err) {
+      throw err;
+    }
+    console.log(`Created ${places.length} places`);
+    mongoose.connection.close();
+  });
+
+
+
 
 // let users = [
 //   {
