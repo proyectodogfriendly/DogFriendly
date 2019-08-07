@@ -3,7 +3,6 @@ window.onload = () => {
   var markers = [];
   var myLatLng = { lat: 40.413031, lng: -3.696575 };
   let btnBarrio = document.getElementById("btn-barrio");
-
   const addMarker = data => {
     //console.log(data);
     for (let i = 0; i < data.data.length; i++) {
@@ -27,36 +26,29 @@ window.onload = () => {
       });
       markers.push(marker);
     }
-    console.log(markers);
   };
-
   const setMapOnAll = map => {
     for (var i = 0; i < markers.length; i++) {
       //console.log(markers[i]);
       markers[i].setMap(map);
     }
   };
-
   // Removes the markers from the map, but keeps them in the array.
   const clearMarkers = () => {
     setMapOnAll(null);
   };
-
   // Shows any markers currently in the array.
   const showMarkers = () => {
     setMapOnAll(map);
   };
-
   // Deletes all markers in the array by removing references to them.
   const deleteMarkers = () => {
     clearMarkers();
     markers = [];
   };
-
   document.getElementById("btn-barrio").onclick = () => {
     deleteMarkers();
     let barrio = document.getElementById("barrio").value;
-
     axios
       .get("http://localhost:3000/api/district", {
         params: { barrio }
@@ -66,7 +58,6 @@ window.onload = () => {
         setMapOnAll(map);
       });
   };
-
   // console.log(document.getElementById("barrio").value);
   document.getElementById("area").onchange = () => {
     let area = document.getElementById("area").value;
@@ -75,7 +66,6 @@ window.onload = () => {
         params: { area }
       };
   };
-
   // btnBarrio.onclick = () => {
   //   show = true;
   //   console.log(barrio);
@@ -83,7 +73,6 @@ window.onload = () => {
   // .then(districts => res.json(districts))
   // .catch(err => console.log(err));
   // };
-
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
     zoom: 14,
@@ -319,60 +308,57 @@ window.onload = () => {
       }
     ]
   });
-  axios.get("http://localhost:3000/api/places").then(response => {
-    //   console.log(response.data)
-    //imagen de icono
-    var myimage = {
-      url: "/images/huella2.png", //ruta de la imagen
-      size: new google.maps.Size(30, 30) //tamaño de la imagen
-      //   origin: new google.maps.Point(0,0), //origen de la iamgen
-      //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
-      //   anchor: new google.maps.Point(0,0)
-    };
-    // fin imagen de icono
-    for (i = 0; i < response.data.length; i++) {
-      var position = new google.maps.LatLng(
-        response.data[i].position.coordinates[1],
-        response.data[i].position.coordinates[0]
-      );
-      //  bounds.extend(position);
-      marker = new google.maps.Marker({
-        position,
-        map,
-        icon: myimage,
-        title: response.data[i].name
-      });
-    }
-    marker.setMap(map);
-  });
-  axios.get("http://localhost:3000/api/areas").then(response => {
-    //   console.log(response.data)
-
-    var myimage2 = {
-      url: "/images/area2.png", //ruta de la imagen
-      size: new google.maps.Size(30, 30) //tamaño de la imagen
-      //   origin: new google.maps.Point(0,0), //origen de la iamgen
-      //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
-      //   anchor: new google.maps.Point(0,0)
-    };
-    for (i = 0; i < response.data.length; i++) {
-      var position = new google.maps.LatLng(
-        response.data[i].position.coordinates[1],
-        response.data[i].position.coordinates[0]
-      );
-      //  bounds.extend(position);
-      marker = new google.maps.Marker({
-        position,
-        map,
-        icon: myimage2,
-        title: response.data[i].district
-      });
-    }
-    marker.setMap(map);
-  });
+  // axios.get("http://localhost:3000/api/places").then(response => {
+  //   //   console.log(response.data)
+  //   //imagen de icono
+  //   var myimage = {
+  //     url: "/images/huella2.png", //ruta de la imagen
+  //     size: new google.maps.Size(30, 30) //tamaño de la imagen
+  //     //   origin: new google.maps.Point(0,0), //origen de la iamgen
+  //     //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+  //     //   anchor: new google.maps.Point(0,0)
+  //   };
+  //   // fin imagen de icono
+  //   for (i = 0; i < response.data.length; i++) {
+  //     var position = new google.maps.LatLng(
+  //       response.data[i].position.coordinates[1],
+  //       response.data[i].position.coordinates[0]
+  //     );
+  //     //  bounds.extend(position);
+  //     marker = new google.maps.Marker({
+  //       position,
+  //       map,
+  //       icon: myimage,
+  //       title: response.data[i].name
+  //     });
+  //   }
+  //   marker.setMap(map);
+  // });
+  // axios.get("http://localhost:3000/api/areas").then(response => {
+  //   //   console.log(response.data)
+  //   var myimage2 = {
+  //     url: "/images/area2.png", //ruta de la imagen
+  //     size: new google.maps.Size(30, 30) //tamaño de la imagen
+  //     //   origin: new google.maps.Point(0,0), //origen de la iamgen
+  //     //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+  //     //   anchor: new google.maps.Point(0,0)
+  //   };
+  //   for (i = 0; i < response.data.length; i++) {
+  //     var position = new google.maps.LatLng(
+  //       response.data[i].position.coordinates[1],
+  //       response.data[i].position.coordinates[0]
+  //     );
+  //     //  bounds.extend(position);
+  //     marker = new google.maps.Marker({
+  //       position,
+  //       map,
+  //       icon: myimage2,
+  //       title: response.data[i].district
+  //     });
+  //   }
+  //   marker.setMap(map);
+  // });
 };
-
-
 
 
 
