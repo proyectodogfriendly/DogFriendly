@@ -1,244 +1,237 @@
+
 <main style="margin-right: 20px;margin-left:20px;">
   <section class="hero" id="hero">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="">
-          <div class="bg-video">
-            <video playsinline="" autoplay="" loop="" muted="" class="fill fullscreen">
-              <source src="images/Dog-park.mp4" type="video/mp4">
-            </video>
-          </div>
-        </section>
+      <div class="container-fluid">
+        <div class="row">
+          <section class="">
+              <div class="bg-video">
+                <video playsinline="" autoplay="" loop="" muted=""  class="fill fullscreen">
+                    <source src="images/Dog-park.mp4" type="video/mp4">
+                </video>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
   </section>
 
 
   <section class="hero" id="about">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="nosotros">
-          <div class="">
-            Sobre nosotros
-          </div>
-        </section>
+      <div class="container-fluid">
+        <div class="row">
+          <section class="nosotros">
+              <div class="">
+              Sobre nosotros  
+              </div>
+          </section>
+        </div>
       </div>
-    </div>
   </section>
 
 
   <section class="hero" id="search">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="mapa">
-          <div id="map"></div>
-        </section>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row justify-space-around espacio">
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Buscar restaurantes por distrito <br>
-          </p>
-          {{!--
-          <form method="POST" action="" class="login-form formulario"> --}}
-            <select id="barrio" class="select-input">
-              {{#each places}}
-              <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
-            {{!-- </form> --}}
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Buscar áreas caninas por distrito <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <select id="area" class="select-input">
-              {{#each areas}}
-              <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <button id="btn-area" type="submit " class="btn btn-white ">BUSCAR</button>
-          </form>
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Mostrar restaurantes <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <button type="submit" class="btn btn-white">Mostrar</button>
-          </form>
-
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Mostrar áreas caninas <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <button type="submit" class="btn btn-white">Mostrar</button>
-          </form>
+      <div class="container-fluid">
+        <div class="row">
+          <section class="mapa">
+              <div id="map"></div>
+          </section>    
         </div>
       </div>
-    </div>
+      <div class="container-fluid">
+        <div class="row justify-space-around espacio">
+            <div class="col-md-3 center-block">
+              <p class="titulo">
+              Buscar restaurantes por distrito <br>
+              </p>
+              {{!-- <form method="POST" action="" class="login-form formulario"> --}}
+                  <select id="barrio" class="select-input">
+                      {{#each places}}
+                      <option value="{{this}}">{{this}}</option>
+                      {{/each}}
+                  </select>
+                  <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
+              {{!-- </form> --}}
+            </div>
+            <div class="col-md-3 center-block">
+              <p class="titulo">
+                Buscar áreas caninas por distrito <br>
+              </p>
+              <form method="POST" action="" class="login-form formulario">
+                 <select id="area" class="select-input">
+                  {{#each areas}}
+                  <option value="{{this}}">{{this}}</option>
+                  {{/each}}
+                </select>
+                <button id="btn-area" type="submit " class="btn btn-white ">BUSCAR</button>
+              </form>
+            </div>
+            <div class="col-md-3 center-block">
+              <p class="titulo">
+                  Mostrar restaurantes <br>
+              </p>
+              <form method="POST" action="" class="login-form formulario">
+                <button type="submit" class="btn btn-white">Mostrar</button>
+              </form>
+              
+            </div>
+            <div class="col-md-3 center-block">
+              <p class="titulo">
+                Mostrar áreas caninas <br>
+              </p>
+              <form method="POST" action="" class="login-form formulario">
+                <button type="submit" class="btn btn-white">Mostrar</button> 
+              </form>
+            </div>
+        </div>
+      </div>  
   </section>
 
-  </div>
-  <div class="col-md-3 center-block">
-    <p class="titulo">
-      Mostrar áreas caninas <br>
-    </p>
-    <form method="POST" action="" class="login-form formulario">
-      <button type="submit" class="btn btn-white">Mostrar</button>
-    </form>
-  </div>
-  </div>
-  </div>
-  </section>
   <section class="hero" id="signup">
-    <div class="container-fluid">
-      <div class="row ">
-        <section class="registro">
-          <div class="caja-registro">
-            <div class="caja-texto text-right reveal fadeInLeft">
-              <h2 class="border-right-title">Formulario de<br> registro</h2><br>
+      <div class="container-fluid">
+          <div class="row ">
+              <section class="registro">
+                <div class="caja-registro">
+                  <div class="caja-texto text-right reveal fadeInLeft">
+                       <h2 class="border-right-title">Formulario de<br> registro</h2><br>
+                   
+                        <p>Introduce tus datos y los de tu perro, creando el perfil podrás obtener diversos
+                          descuentos para canjear en los restaurantes, y magníficos regalitos 
+                          para tu perr@.</p>
+                  </div>
+                   <div class="caja-formulario reveal fadeInRight">
+                    <form method="POST" action="" class="login-form formulario">
+                        <div class="row">
+                          <div class="col-6">
+                                <div class="form-group">
+                                  <label for="name-input">Nombre</label>
+                                  <input id="name-input" type="text" class="form-control" placeholder="Escribe tu nombre" value=""/>
+                                </div>
+                                <div class="form-group">
+                                  <label for="apellido-input">Apellidos</label>
+                                  <input id="apellido-input" type="text" class="form-control" placeholder="Escribe tus apellidos" value=""/>
+                                </div>
+                          </div>
+                          <div class="col-6">
+                                <div class="form-group">
+                                  <label for="mail-input">Mail</label>
+                                  <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value=""/>
+                                </div>
+                                <div class="form-group">
+                                  <label for="pass-input">Contraseña</label>
+                                  <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value=""/>
+                                </div>
+                          </div>
+                          <div class="col-6">
+                                <div class="form-group">
+                                  <label for="perro-input">Nombre de tu perr@</label>
+                                  <input id="perro-input" type="text" class="form-control" placeholder="Escribe el nombre de tu perro" value=""/>
+                                </div>
+                                <div class="form-group">
+                                  <label for="edad-input">Edad de tu perr@</label>
+                                  <input id="edad-input" type="text" class="form-control" placeholder="Escribe la edad de tu perro" value=""/>
+                                </div>
+                          </div>
+                          <div class="col-6">
+                              <img class="logo" src="images/dog-friendly2.png" alt="Logotipo">
 
-              <p>Introduce tus datos y los de tu perro, creando el perfil podrás obtener diversos descuentos para canjear
-                en los restaurantes, y magníficos regalitos para tu perr@.</p>
-            </div>
-            <div class="caja-formulario reveal fadeInRight">
-              <form method="POST" action="" class="login-form formulario">
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="name-input">Nombre</label>
-                      <input id="name-input" type="text" class="form-control" placeholder="Escribe tu nombre" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="apellido-input">Apellidos</label>
-                      <input id="apellido-input" type="text" class="form-control" placeholder="Escribe tus apellidos" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="mail-input">Mail</label>
-                      <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="pass-input">Contraseña</label>
-                      <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="perro-input">Nombre de tu perr@</label>
-                      <input id="perro-input" type="text" class="form-control" placeholder="Escribe el nombre de tu perro" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="edad-input">Edad de tu perr@</label>
-                      <input id="edad-input" type="text" class="form-control" placeholder="Escribe la edad de tu perro" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <img class="logo" src="images/dog-friendly2.png" alt="Logotipo">
-                  </div>
-                </div>
-                {{!--
-                <div class="row">
-                  <div class="col-6">
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="foto-input">Foto de tu perro:</label>
-                        <input class="btn btn-white" id="foto-input" type="file" name="photo">
-                      </div>
+                          </div>  
+                        </div>
+                        {{!-- <div class="row">
+                          <div class="col-6">
+                            <form action="/upload" method="post" enctype="multipart/form-data">
+                                  <div class="form-group">
+                                    <label for="foto-input">Foto de tu perro:</label> 
+                                    <input class="btn btn-white"id="foto-input" type="file" name="photo">
+                                  </div> 
+                            </form>  
+                          </div>
+                          <div class="col-6">
+                               <button type="submit" class="btn btn-white">Registrar</button>
+                          </div>
+                        </div> --}}
+                        <div class="col-6">
+                               <button type="submit" class="btn btn-white">Registrar</button>
+                          </div>
                     </form>
                   </div>
-                  <div class="col-6">
-                    <button type="submit" class="btn btn-white">Registrar</button>
-                  </div>
-                </div> --}}
-                <div class="col-6">
-                  <button type="submit" class="btn btn-white">Registrar</button>
                 </div>
-              </form>
-            </div>
+              </section>
           </div>
-        </section>
       </div>
   </section>
+
   <section class="hero" id="login">
-    <div class="container-fluid">
-      <div class="row justify-content-around">
-        <section class="sesion">
-          <div class="caja-sesion">
-            <div class="caja-texto">
-              <p>Rellena el formulario para entrar en tu perfil</p>
-            </div>
-            <div class="caja-formulario">
-              <form method="POST" action="" class="login-form formulario">
-                <div class="row">
-                  <div class="col-8">
-
-                    <div class="form-group">
-                      <label for="mail-input">Mail</label>
-                      <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="pass-input">Contraseña</label>
-                      <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value="" />
-                    </div>
+     <div class="container-fluid">
+          <div class="row justify-content-around">
+               <section class="sesion">
+                <div class="caja-sesion">
+                  <div class="caja-texto">
+                      <p>Rellena el formulario para entrar en tu perfil</p>   
                   </div>
-                </div>
-                {{!--
-                <div class="row">
-                  <div class="col-6">
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="foto-input">Foto de tu perro:</label>
-                        <input class="btn btn-white" id="foto-input" type="file" name="photo">
-                      </div>
+                   <div class="caja-formulario">
+                    <form method="POST" action="" class="login-form formulario">
+                        <div class="row">
+                          <div class="col-8">
+                         
+                                <div class="form-group">
+                                  <label for="mail-input">Mail</label>
+                                  <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value=""/>
+                                </div>
+                                <div class="form-group">
+                                  <label for="pass-input">Contraseña</label>
+                                  <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value=""/>
+                                </div>
+                          </div>
+                        </div>
+                        {{!-- <div class="row">
+                          <div class="col-6">
+                            <form action="/upload" method="post" enctype="multipart/form-data">
+                                  <div class="form-group">
+                                    <label for="foto-input">Foto de tu perro:</label> 
+                                    <input class="btn btn-white"id="foto-input" type="file" name="photo">
+                                  </div> 
+                            </form>  
+                          </div>
+                          <div class="col-6">
+                               <button type="submit" class="btn btn-white">Registrar</button>
+                          </div>
+                        </div> --}}
+                        <div class="col-6">
+                               <button type="submit" class="btn btn-white">Registrar</button>
+                          </div>
                     </form>
                   </div>
-                  <div class="col-6">
-                    <button type="submit" class="btn btn-white">Registrar</button>
-                  </div>
-                </div> --}}
-                <div class="col-6">
-                  <button type="submit" class="btn btn-white">Registrar</button>
                 </div>
-              </form>
-            </div>
+              </section>
           </div>
-        </section>
       </div>
-    </div>
-  </section>
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="row justify-content-between ">
-      </div>
-    </div>
   </section>
 
-  <footer class="page-footer">
-    <div class="container-fluid">
-      <div class="row justify-content-between">
-        <div class="col-md-4 col-center">
-        </div>
-        <div class="col-md-4 iconos-redes">
+
+ <section class="contact" id="contact">
+      <div class="container">
+          <div class="row justify-content-between ">
+          </div>
+      </div>
+</section>
+
+   
+<footer class="page-footer">
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-md-4 col-center">
+      </div>
+      <div class="col-md-4 iconos-redes">
           <!-- Facebook -->
           <a class="fb-ic">
             <img src="../../images/face.png" alt="facebook" class="redes">
           </a>
           <!-- Twitter -->
           <a class="tw-ic">
-            <img src="../../images/tw.png" alt="facebook" class="redes">
+             <img src="../../images/tw.png" alt="facebook" class="redes">
           </a>
           <!-- Google +-->
           <a class="gplus-ic">
-            <img src="../../images/what.png" alt="facebook" class="redes">
+             <img src="../../images/what.png" alt="facebook" class="redes">
           </a>
           <!--Linkedin -->
           <a class="li-ic">
@@ -248,253 +241,11 @@
           <a class="ins-ic">
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
           </a>
-        </div>
-        <div class="col-md-4 col-center">
-        </div>
-      </div>
-    </div>
-  </footer>
-</main>
-{{!--
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p> --}}
-<main style="margin-right: 20px;margin-left:20px;">
-  <section class="hero" id="hero">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="">
-          <div class="bg-video">
-            <video playsinline="" autoplay="" loop="" muted="" class="fill fullscreen">
-              <source src="images/Dog-park.mp4" type="video/mp4">
-            </video>
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
-  <section class="hero" id="about">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="nosotros">
-          <div class="">
-            Sobre nosotros
-          </div>
-        </section>
-      </div>
-  </section>
-  <section class="hero" id="search">
-    <div class="container-fluid">
-      <div class="row">
-        <section class="mapa">
-          <div id="map"></div>
-        </section>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row justify-space-around espacio">
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Buscar restaurantes por distrito <br>
-          </p>
-          {{!--
-          <form method="POST" action="" class="login-form formulario"> --}}
-            <select id="barrio" class="select-input">
-              {{#each places}}
-              <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
-            {{!-- </form> --}}
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Buscar áreas caninas por distrito <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <select id="area" class="select-input">
-              {{#each areas}}
-              <option value="{{this}}">{{this}}</option>
-              {{/each}}
-            </select>
-            <button id="btn-area" type="submit " class="btn btn-white ">BUSCAR</button>
-          </form>
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Mostrar restaurantes <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <button type="submit" class="btn btn-white">Mostrar</button>
-          </form>
 
-        </div>
-        <div class="col-md-3 center-block">
-          <p class="titulo">
-            Mostrar áreas caninas <br>
-          </p>
-          <form method="POST" action="" class="login-form formulario">
-            <button type="submit" class="btn btn-white">Mostrar</button>
-          </form>
-        </div>
+      </div>
+      <div class="col-md-4 col-center">
       </div>
     </div>
-  </section>
-  <section class="hero" id="signup">
-    <div class="container-fluid">
-      <div class="row ">
-        <section class="registro">
-          <div class="caja-registro">
-            <div class="caja-texto text-right reveal fadeInLeft">
-              <h2 class="border-right-title">Formulario de<br> registro</h2><br>
-
-              <p>Introduce tus datos y los de tu perro, creando el perfil podrás obtener diversos descuentos para canjear
-                en los restaurantes, y magníficos regalitos para tu perr@.</p>
-            </div>
-            <div class="caja-formulario reveal fadeInRight">
-              <form method="POST" action="" class="login-form formulario">
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="name-input">Nombre</label>
-                      <input id="name-input" type="text" class="form-control" placeholder="Escribe tu nombre" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="apellido-input">Apellidos</label>
-                      <input id="apellido-input" type="text" class="form-control" placeholder="Escribe tus apellidos" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="mail-input">Mail</label>
-                      <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="pass-input">Contraseña</label>
-                      <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label for="perro-input">Nombre de tu perr@</label>
-                      <input id="perro-input" type="text" class="form-control" placeholder="Escribe el nombre de tu perro" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="edad-input">Edad de tu perr@</label>
-                      <input id="edad-input" type="text" class="form-control" placeholder="Escribe la edad de tu perro" value="" />
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <img class="logo" src="images/dog-friendly2.png" alt="Logotipo">
-                  </div>
-                </div>
-                {{!--
-                <div class="row">
-                  <div class="col-6">
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="foto-input">Foto de tu perro:</label>
-                        <input class="btn btn-white" id="foto-input" type="file" name="photo">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="col-6">
-                    <button type="submit" class="btn btn-white">Registrar</button>
-                  </div>
-                </div> --}}
-                <div class="col-6">
-                  <button type="submit" class="btn btn-white">Registrar</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
-  <section class="hero" id="login">
-    <div class="container-fluid">
-      <div class="row justify-content-around">
-        <section class="sesion">
-          <div class="caja-sesion">
-            <div class="caja-texto">
-              <p>Rellena el formulario para entrar en tu perfil</p>
-            </div>
-            <div class="caja-formulario">
-              <form method="POST" action="" class="login-form formulario">
-                <div class="row">
-                  <div class="col-8">
-
-                    <div class="form-group">
-                      <label for="mail-input">Mail</label>
-                      <input id="mail-input" type="text" class="form-control" placeholder="Escribe tu mail" value="" />
-                    </div>
-                    <div class="form-group">
-                      <label for="pass-input">Contraseña</label>
-                      <input id="pass-input" type="text" class="form-control" placeholder="Escribe tu contraseña" value="" />
-                    </div>
-                  </div>
-                </div>
-                {{!--
-                <div class="row">
-                  <div class="col-6">
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                      <div class="form-group">
-                        <label for="foto-input">Foto de tu perro:</label>
-                        <input class="btn btn-white" id="foto-input" type="file" name="photo">
-                      </div>
-                    </form>
-                  </div>
-                  <div class="col-6">
-                    <button type="submit" class="btn btn-white">Registrar</button>
-                  </div>
-                </div> --}}
-                <div class="col-6">
-                  <button type="submit" class="btn btn-white">Registrar</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  </section>
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="row justify-content-between ">
-      </div>
-    </div>
-  </section>
-
-  <footer class="page-footer">
-    <div class="container-fluid">
-      <div class="row justify-content-between">
-        <div class="col-md-4 col-center">
-        </div>
-        <div class="col-md-4 iconos-redes">
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <img src="../../images/face.png" alt="facebook" class="redes">
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <img src="../../images/tw.png" alt="facebook" class="redes">
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <img src="../../images/what.png" alt="facebook" class="redes">
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <img src="../../images/ins.png" alt="facebook" class="redes">
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-        </div>
-        <div class="col-md-4 col-center">
-        </div>
-      </div>
-    </div>
-  </footer>
+  </div>
+</footer>
 </main>
