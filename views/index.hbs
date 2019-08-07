@@ -4,173 +4,182 @@
 
 <main style="margin-right: 20px;margin-left:20px;">
   <section class="hero" id="hero">
-      <div class="container-fluid">
-        <div class="row">
-          <section class="">
-              <div class="bg-video">
-                <video playsinline="" autoplay="" loop="" muted=""  class="fill fullscreen">
-                    <source src="images/Dog-park.mp4" type="video/mp4">
-                </video>
-            </div>
-          </section>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
+        <section class="">
+          <div class="bg-video">
+            <video playsinline="" autoplay="" loop="" muted="" class="fill fullscreen">
+              <source src="images/Dog-park.mp4" type="video/mp4">
+            </video>
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 
   <section class="hero" id="about">
-      <div class="container-fluid">
-        <div class="row">
-          <section class="nosotros">
-              <div class="">
-              Sobre nosotros  
-              </div>
-          </section>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
+        <section class="nosotros">
+          <div class="">
+            Sobre nosotros
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 
   <section class="hero" id="search">
-      <div class="container-fluid">
-        <div class="row">
-          <section class="mapa">
-              <div id="map"></div>
-          </section>    
+    <div class="container-fluid">
+      <div class="row">
+        <section class="mapa">
+          <div id="map"></div>
+        </section>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-space-around espacio">
+        <div class="col-md-3 center-block">
+          <p class="titulo">
+            Buscar restaurantes por distrito <br>
+          </p>
+          {{!--
+          <form method="POST" action="" class="login-form formulario"> --}}
+            <select id="barrio" class="select-input">
+
+              {{#each places}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}} {{!--
+              <option value=" value2 "> BARAJAS</option>
+              <option value="value1 "> CENTRO</option>
+              <option value="value3 "> CARABANCHEL</option>
+              <option value="value2 "> CHAMARTÍN</option>
+              <option value="value3 "> CHAMBERÍ </option>
+              <option value="value1 "> CIUDAD LINEAL</option>
+              <option value="value1 "> FUENCARRAL EL PARDO</option>
+              <option value="value2 "> HORTALEZA </option>
+              <option value="value3 "> LATINA</option>
+              <option value="value1 "> MONCLOA-ARAVACA</option>
+              <option value="value2 "> MORATALAZ</option>
+              <option value="value3 "> PUENTE DE VALLECAS </option>
+              <option value="value1 "> RETIRO</option>
+              <option value="value1 "> SALAMANCA</option>
+              <option value="value2 "> SAN BLAS</option>
+              <option value="value3 "> TETUÁN</option>
+              <option value="value1 "> USERA</option>
+              <option value="value2 "> VICÁLVARO </option>
+              <option value="value3 "> VILLA DE VALLECAS </option>
+              <option value="value1 "> VILLAVERDE</option> --}}
+            </select>
+            <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
+            {{!-- </form> --}}
+        </div>
+        <div class="col-md-3 center-block ">
+          <p class="titulo ">
+            Buscar áreas caninas por distrito <br>
+          </p>
+          {{!--
+          <form method="POST " action=" " class="login-form formulario "> --}}
+            <select id="area" class="select-input">
+
+              {{#each areas}}
+              <option value="{{this}}">{{this}}</option>
+              {{/each}} {{!-- <select name="select " class="select-input ">
+                <option value="value1 "> ARGANZUELA</option>
+                <option value="value2 "> BARAJAS</option>
+                <option value="value3 "> CARABANCHEL</option>
+                <option value="value1 "> CENTRO</option>
+                <option value="value2 "> CHAMARTÍN</option>
+                <option value="value3 "> CHAMBERÍ </option>
+                <option value="value1 "> CIUDAD LINEAL</option>
+                <option value="value1 "> FUENCARRAL EL PARDO</option>
+                <option value="value2 "> HORTALEZA </option>
+                <option value="value3 "> LATINA</option>
+                <option value="value1 "> MONCLOA-ARAVACA</option>
+                <option value="value2 "> MORATALAZ</option>
+                <option value="value3 "> PUENTE DE VALLECAS </option>
+                <option value="value1 "> RETIRO</option>
+                <option value="value1 "> SALAMANCA</option>
+                <option value="value2 "> SAN BLAS</option>
+                <option value="value3 "> TETUÁN</option>
+                <option value="value1 "> USERA</option>
+                <option value="value2 "> VICÁLVARO </option>
+                <option value="value3 "> VILLA DE VALLECAS </option>
+                <option value="value1 "> VILLAVERDE</option> --}}
+              </select>
+              <button type="submit " class="btn btn-white ">BUSCAR</button>
+          </form>
+        </div>
+        <div class="col-md-3 center-block ">
+          <p class="titulo ">
+            Mostrar restaurantes por distrito <br>
+          </p>
+          <form method="POST " action=" " class="login-form formulario ">
+            <button type="submit " class="btn btn-white ">Mostrar</button>
+          </form>
+
+        </div>
+        <div class="col-md-3 center-block ">
+          <p class="titulo ">
+            Mostrar áreas caninas por distrito <br>
+          </p>
+          <form method="POST " action=" " class="login-form formulario ">
+            <button type="submit " class="btn btn-white ">Mostrar</button>
+          </form>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row justify-space-around espacio">
-            <div class="col-md-3 center-block">
-              <p class="titulo">
-              Buscar restaurantes por distrito <br>
-              </p>
-              <form method="POST" action="" class="login-form formulario">
-                <select name="select" class="select-input">
-                  <option value="value1"> ARGANZUELA</option> 
-                  <option value="value2"> BARAJAS</option>
-                  <option value="value3"> CARABANCHEL</option>
-                  <option value="value1"> CENTRO</option> 
-                  <option value="value2"> CHAMARTÍN</option>
-                  <option value="value3"> CHAMBERÍ </option>
-                  <option value="value1"> CIUDAD LINEAL</option> 
-                  <option value="value1"> FUENCARRAL EL PARDO</option> 
-                  <option value="value2"> HORTALEZA </option>
-                  <option value="value3"> LATINA</option>
-                  <option value="value1"> MONCLOA-ARAVACA</option> 
-                  <option value="value2"> MORATALAZ</option>
-                  <option value="value3"> PUENTE DE VALLECAS </option>
-                  <option value="value1"> RETIRO</option> 
-                  <option value="value1"> SALAMANCA</option> 
-                  <option value="value2"> SAN BLAS</option>
-                  <option value="value3"> TETUÁN</option>
-                  <option value="value1"> USERA</option> 
-                  <option value="value2"> VICÁLVARO </option>
-                  <option value="value3"> VILLA DE VALLECAS   </option>
-                  <option value="value1"> VILLAVERDE</option> 
-                </select>
-                <button type="submit" class="btn btn-white">BUSCAR</button>
-              </form>
-            </div>
-            <div class="col-md-3 center-block">
-              <p class="titulo">
-                Buscar áreas caninas por distrito <br>
-              </p>
-              <form method="POST" action="" class="login-form formulario">
-                <select name="select" class="select-input">
-                  <option value="value1"> ARGANZUELA</option> 
-                  <option value="value2"> BARAJAS</option>
-                  <option value="value3"> CARABANCHEL</option>
-                  <option value="value1"> CENTRO</option> 
-                  <option value="value2"> CHAMARTÍN</option>
-                  <option value="value3"> CHAMBERÍ </option>
-                  <option value="value1"> CIUDAD LINEAL</option> 
-                  <option value="value1"> FUENCARRAL EL PARDO</option> 
-                  <option value="value2"> HORTALEZA </option>
-                  <option value="value3"> LATINA</option>
-                  <option value="value1"> MONCLOA-ARAVACA</option> 
-                  <option value="value2"> MORATALAZ</option>
-                  <option value="value3"> PUENTE DE VALLECAS </option>
-                  <option value="value1"> RETIRO</option> 
-                  <option value="value1"> SALAMANCA</option> 
-                  <option value="value2"> SAN BLAS</option>
-                  <option value="value3"> TETUÁN</option>
-                  <option value="value1"> USERA</option> 
-                  <option value="value2"> VICÁLVARO </option>
-                  <option value="value3"> VILLA DE VALLECAS   </option>
-                  <option value="value1"> VILLAVERDE</option> 
-                </select>
-                <button type="submit" class="btn btn-white">BUSCAR</button>
-              </form>
-            </div>
-            <div class="col-md-3 center-block">
-              <p class="titulo">
-                  Mostrar restaurantes por distrito <br>
-              </p>
-              <form method="POST" action="" class="login-form formulario">
-                <button type="submit" class="btn btn-white">Mostrar</button>
-              </form>
-              
-            </div>
-            <div class="col-md-3 center-block">
-              <p class="titulo">
-                Mostrar áreas caninas por distrito <br>
-              </p>
-              <form method="POST" action="" class="login-form formulario">
-                <button type="submit" class="btn btn-white">Mostrar</button> 
-              </form>
-            </div>
-        </div>
-      </div>  
+    </div>
   </section>
 
-  <section class="hero" id="data">
-      <div class="container-fluid">
-        <div class="row">
-          <section class="datos">
-            <div class="">
-              estos son unos datos de madrid
-            
-            </div>
-          </section>
-        </div>
+  <section class="hero " id="data ">
+    <div class="container-fluid ">
+      <div class="row ">
+        <section class="datos ">
+          <div class=" ">
+            estos son unos datos de madrid
+
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 
-  <section class="hero" id="signup">
-      <div class="container-fluid">
-        <div class="row justify-content-around">
-          <section class="registro">
-              <div class="d-flex justify-content-between">
-                  <div class="col-md-7">
-                      Rellena el formulario para darte de alta
-                  </div>
-                  <div class="col-md-5">
-                    <form method="POST" action="" class="login-form formulario">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Escribe tu email" value=""/>
-                        </div>
-                  
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Escribe tu contraseña" value=""/>
-                        </div>
-                        <button type="submit" class="btn btn-white">Registrar</button>
-                    </form>
-                  </div>
-              </div>
-          </section>
-        </div>
+  <section class="hero " id="signup ">
+    <div class="container-fluid ">
+      <div class="row justify-content-around ">
+        <section class="registro ">
+          <div class="d-flex justify-content-between ">
+            <div class="col-md-7 ">
+              Rellena el formulario para darte de alta
+            </div>
+            <div class="col-md-5 ">
+              <form method="POST " action=" " class="login-form formulario ">
+                <div class="form-group ">
+                  <input type="text " class="form-control " placeholder="Escribe tu email " value=" " />
+                </div>
+
+                <div class="form-group ">
+                  <input type="text " class="form-control " placeholder="Escribe tu contraseña " value=" " />
+                </div>
+                <button type="submit " class="btn btn-white ">Registrar</button>
+              </form>
+            </div>
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 
-  <section class="hero" id="login">
-      <div class="container-fluid">
-        <div class="row">
-          <section class="sesion">
-            <div class="">
-              Este es el formulario inicio de sesión
-            
-            </div>
-          </section>
-        </div>
+  <section class="hero " id="login ">
+    <div class="container-fluid ">
+      <div class="row ">
+        <section class="sesion ">
+          <div class=" ">
+            Este es el formulario inicio de sesión
+
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 </main>

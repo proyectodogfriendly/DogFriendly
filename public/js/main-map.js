@@ -1,58 +1,88 @@
-// // import axios from "axios";
-// // const bus = axios.create({
-// //     baseURL: 'http://localhost:3000/api'
-// // })
-
-// window.onload = () =>{
-
-//   function initMap() {
-//     //   axios.get('http://localhost:3000/api/places')
-//     // axios.get('http://localhost:3000/api/places')
-//     //   .then(places => {
-//     //       console.log(places)
-//     //     //llamar a la funcion drawpoint
-//         drawpoint()
-//     //     console.log('holaaa')
-//     //   })
-//     // Styles a map in night mode.
-
-//   }
-
-//   function drawpoint(places){
-
-//     var marker = new google.maps.Marker({
-//         position:{lat: 40.671531, lng: -73.963588},
-//         map: map,
-//         title: 'Hello World!'
-//       });
-
-//       marker.setMap(map);
-//     // var bounds = new google.maps.LatLngBounds();
-//     // Multiple markers location, latitude, and longitude
-//     // var markers = [
-//     //     ['Brooklyn Museum, NY', 40.671531, -73.963588],
-//     //     ['Brooklyn Public Library, NY', 40.672587, -73.968146],
-//     //     ['Prospect Park Zoo, NY', 40.665588, -73.965336]
-//     // ];
-
-//     // Place each marker on the map
-// //     for( i = 0; i < places.length; i++ ) {
-// //         var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-// //         bounds.extend(position);
-// //         marker = new google.maps.Marker({
-// //             position: position,
-// //             map: map,
-// //             title: markers[i][0]
-// //         });
-// //   }
-
-//   }
-//   initMap()
-
-// }
-
 window.onload = () => {
+  let show = false;
+  var markers = [];
   var myLatLng = { lat: 40.413031, lng: -3.696575 };
+  let btnBarrio = document.getElementById("btn-barrio");
+
+  const addMarker = data => {
+    //console.log(data);
+    for (let i = 0; i < data.data.length; i++) {
+      var position = new google.maps.LatLng(
+        data.data[i].position.coordinates[1],
+        data.data[i].position.coordinates[0]
+      );
+      var title = data.data[i].district;
+      var myimage = {
+        url: "/images/huella2.png", //ruta de la imagen
+        size: new google.maps.Size(30, 30) //tamaño de la imagen
+        //   origin: new google.maps.Point(0,0), //origen de la iamgen
+        //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+        //   anchor: new google.maps.Point(0,0)
+      };
+      var marker = new google.maps.Marker({
+        position,
+        map,
+        icon: myimage,
+        title: title
+      });
+      markers.push(marker);
+    }
+    console.log(markers);
+  };
+
+  const setMapOnAll = map => {
+    for (var i = 0; i < markers.length; i++) {
+      //console.log(markers[i]);
+      markers[i].setMap(map);
+    }
+  };
+
+  // Removes the markers from the map, but keeps them in the array.
+  const clearMarkers = () => {
+    setMapOnAll(null);
+  };
+
+  // Shows any markers currently in the array.
+  const showMarkers = () => {
+    setMapOnAll(map);
+  };
+
+  // Deletes all markers in the array by removing references to them.
+  const deleteMarkers = () => {
+    clearMarkers();
+    markers = [];
+  };
+
+  document.getElementById("btn-barrio").onclick = () => {
+    deleteMarkers();
+    let barrio = document.getElementById("barrio").value;
+
+    axios
+      .get("http://localhost:3000/api/district", {
+        params: { barrio }
+      })
+      .then(response => {
+        addMarker(response);
+        setMapOnAll(map);
+      });
+  };
+
+  // console.log(document.getElementById("barrio").value);
+  document.getElementById("area").onchange = () => {
+    let area = document.getElementById("area").value;
+    axios.get("http://localhost:3000/api/districta"),
+      {
+        params: { area }
+      };
+  };
+
+  // btnBarrio.onclick = () => {
+  //   show = true;
+  //   console.log(barrio);
+  //  axios.get("http://localhost:3000/api/district", { params: { barrio } });
+  // .then(districts => res.json(districts))
+  // .catch(err => console.log(err));
+  // };
 
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
@@ -289,61 +319,65 @@ window.onload = () => {
       }
     ]
   });
-
-  axios.get("http://localhost:3000/api/places").then(response => {
-    //   console.log(response.data)
-
-//imagen de icono
-    var myimage = {
-      url: '/images/huella2.png', //ruta de la imagen
-      size: new google.maps.Size(30, 30), //tamaño de la imagen
-    //   origin: new google.maps.Point(0,0), //origen de la iamgen
-    //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
-    //   anchor: new google.maps.Point(0,0) 
-     };
-// fin imagen de icono
-    for( i = 0; i < response.data.length; i++ ) {
-         var position = new google.maps.LatLng(response.data[i].position.coordinates[1], response.data[i].position.coordinates[0]);
-        //  bounds.extend(position);
-         marker = new google.maps.Marker({
-             position,
-             map,
-             icon: myimage,
-             title: response.data[i].name
-                });
-          }
-          marker.setMap(map);
-  })
-}
-    for (i = 0; i < response.data.length; i++) {
-      var position = new google.maps.LatLng(
-        response.data[i].position.coordinates[1],
-        response.data[i].position.coordinates[0]
-      );
-      //  bounds.extend(position);
-      marker = new google.maps.Marker({
-        position,
-        map,
-        title: response.data[i].name
-      });
-    }
-    marker.setMap(map);
-  });
-
-  axios.get("http://localhost:3000/api/areas").then(response => {
-    //   console.log(response.data)
-    for (i = 0; i < response.data.length; i++) {
-      var position = new google.maps.LatLng(
-        response.data[i].position.coordinates[1],
-        response.data[i].position.coordinates[0]
-      );
-      //  bounds.extend(position);
-      marker = new google.maps.Marker({
-        position,
-        map,
-        title: response.data[i].district
-      });
-    }
-    marker.setMap(map);
-  });
 };
+// if (!show) {
+//   axios.get("http://localhost:3000/api/places").then(response => {
+//     //imagen de icono
+//     var myimage = {
+//       url: "/images/huella2.png", //ruta de la imagen
+//       size: new google.maps.Size(30, 30) //tamaño de la imagen
+//       //   origin: new google.maps.Point(0,0), //origen de la iamgen
+//       //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+//       //   anchor: new google.maps.Point(0,0)
+//     };
+//     // fin imagen de icono
+//     for (i = 0; i < response.data.length; i++) {
+//       var position = new google.maps.LatLng(
+//         response.data[i].position.coordinates[1],
+//         response.data[i].position.coordinates[0]
+//       );
+//       //  bounds.extend(position);
+//       marker = new google.maps.Marker({
+//         position,
+//         map,
+//         icon: myimage,
+//         title: response.data[i].name
+//       });
+//     }
+//     marker.setMap(map);
+//   });
+
+// axios.get("http://localhost:3000/api/areas").then(response => {
+//   //   console.log(response.data)
+//   for (i = 0; i < response.data.length; i++) {
+//     var position = new google.maps.LatLng(
+//       response.data[i].position.coordinates[1],
+//       response.data[i].position.coordinates[0]
+//     );
+//     //  bounds.extend(position);
+//     marker = new google.maps.Marker({
+//       position,
+//       map,
+//       title: response.data[i].district
+//     });
+//   }
+//   marker.setMap(map);
+// });
+//Pintar solo places por barrio
+// axios.get("http://localhost:3000/api/district").then(response => {
+//   //   console.log(response.data)
+//   for (i = 0; i < response.data.length; i++) {
+//     var position = new google.maps.LatLng(
+//       response.data[i].position.coordinates[1],
+//       response.data[i].position.coordinates[0]
+//     );
+//     //  bounds.extend(position);
+//     marker = new google.maps.Marker({
+//       position,
+//       map,
+//       title: response.data[i].district
+//     });
+//   }
+//   marker.setMap(map);
+// });
+// }
