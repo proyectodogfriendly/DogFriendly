@@ -1,5 +1,89 @@
 window.onload = () => {
+  let show = false;
+  var markers = [];
   var myLatLng = { lat: 40.413031, lng: -3.696575 };
+  let btnBarrio = document.getElementById("btn-barrio");
+
+  const addMarker = data => {
+    //console.log(data);
+    for (let i = 0; i < data.data.length; i++) {
+      var position = new google.maps.LatLng(
+        data.data[i].position.coordinates[1],
+        data.data[i].position.coordinates[0]
+      );
+      var title = data.data[i].district;
+      var myimage = {
+        url: "/images/huella2.png", //ruta de la imagen
+        size: new google.maps.Size(30, 30) //tamaño de la imagen
+        //   origin: new google.maps.Point(0,0), //origen de la iamgen
+        //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+        //   anchor: new google.maps.Point(0,0)
+      };
+      var marker = new google.maps.Marker({
+        position,
+        map,
+        icon: myimage,
+        title: title
+      });
+      markers.push(marker);
+    }
+    console.log(markers);
+  };
+
+  const setMapOnAll = map => {
+    for (var i = 0; i < markers.length; i++) {
+      //console.log(markers[i]);
+      markers[i].setMap(map);
+    }
+  };
+
+  // Removes the markers from the map, but keeps them in the array.
+  const clearMarkers = () => {
+    setMapOnAll(null);
+  };
+
+  // Shows any markers currently in the array.
+  const showMarkers = () => {
+    setMapOnAll(map);
+  };
+
+  // Deletes all markers in the array by removing references to them.
+  const deleteMarkers = () => {
+    clearMarkers();
+    markers = [];
+  };
+
+  document.getElementById("btn-barrio").onclick = () => {
+    deleteMarkers();
+    let barrio = document.getElementById("barrio").value;
+
+    axios
+      .get("http://localhost:3000/api/district", {
+        params: { barrio }
+      })
+      .then(response => {
+        addMarker(response);
+        setMapOnAll(map);
+      });
+  };
+
+  // console.log(document.getElementById("barrio").value);
+  document.getElementById("area").onchange = () => {
+    let area = document.getElementById("area").value;
+    axios.get("http://localhost:3000/api/districta"),
+      {
+        params: { area }
+      };
+  };
+
+  // btnBarrio.onclick = () => {
+  //   show = true;
+  //   console.log(barrio);
+  //  axios.get("http://localhost:3000/api/district", { params: { barrio } });
+  // .then(districts => res.json(districts))
+  // .catch(err => console.log(err));
+  // };
+
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
     zoom: 14,
