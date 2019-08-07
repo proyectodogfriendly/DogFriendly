@@ -3,7 +3,6 @@ window.onload = () => {
   var markers = [];
   var myLatLng = { lat: 40.413031, lng: -3.696575 };
   let btnBarrio = document.getElementById("btn-barrio");
-
   const addMarker = data => {
     //console.log(data);
     for (let i = 0; i < data.data.length; i++) {
@@ -28,34 +27,28 @@ window.onload = () => {
       markers.push(marker);
     }
   };
-
   const setMapOnAll = map => {
     for (var i = 0; i < markers.length; i++) {
       //console.log(markers[i]);
       markers[i].setMap(map);
     }
   };
-
   // Removes the markers from the map, but keeps them in the array.
   const clearMarkers = () => {
     setMapOnAll(null);
   };
-
   // Shows any markers currently in the array.
   const showMarkers = () => {
     setMapOnAll(map);
   };
-
   // Deletes all markers in the array by removing references to them.
   const deleteMarkers = () => {
     clearMarkers();
     markers = [];
   };
-
   document.getElementById("btn-barrio").onclick = () => {
     deleteMarkers();
     let barrio = document.getElementById("barrio").value;
-
     axios
       .get("http://localhost:3000/api/district", {
         params: { barrio }
@@ -87,7 +80,6 @@ window.onload = () => {
   // .then(districts => res.json(districts))
   // .catch(err => console.log(err));
   // };
-
   var map = new google.maps.Map(document.getElementById("map"), {
     center: myLatLng,
     zoom: 14,
@@ -351,7 +343,6 @@ window.onload = () => {
   // });
   // axios.get("http://localhost:3000/api/areas").then(response => {
   //   //   console.log(response.data)
-
   //   var myimage2 = {
   //     url: "/images/area2.png", //ruta de la imagen
   //     size: new google.maps.Size(30, 30) //tamaño de la imagen
