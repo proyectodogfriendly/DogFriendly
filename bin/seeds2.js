@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+require("dotenv").config();
 
 const bcryptSalt = 10;
 const Area = require("../models/Areas");
 
 mongoose
-  .connect("mongodb://localhost/proyectodogfriendly", { useNewUrlParser: true })
+  .connect(process.env.DB_REMOTE, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`

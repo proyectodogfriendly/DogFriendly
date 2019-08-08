@@ -57,7 +57,7 @@ window.onload = () => {
     deleteMarkers();
     let barrio = document.getElementById("barrio").value;
     axios
-      .get("http://localhost:3000/api/district", {
+      .get("https://dogfriendlyplaces.herokuapp.com/api/district", {
         params: { barrio }
       })
       .then(response => {
@@ -80,7 +80,7 @@ window.onload = () => {
     deleteMarkers();
     let area = document.getElementById("area").value;
     axios
-      .get("http://localhost:3000/api/districta", {
+      .get("https://dogfriendlyplaces.herokuapp.com/api/districta", {
         params: { area }
       })
       .then(response => {

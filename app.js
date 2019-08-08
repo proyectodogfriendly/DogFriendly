@@ -14,7 +14,7 @@ const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
 mongoose
-  .connect("mongodb://localhost/proyectodogfriendly", { useNewUrlParser: true })
+  .connect(process.env.DB_REMOTE, { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -64,6 +64,8 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
+app.locals.googleApi = process.env.GOOGLE_API;
+
 
 // Enable authentication using session + passport
 app.use(
