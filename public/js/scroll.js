@@ -1,13 +1,13 @@
-onload = inicia; 
-onscroll = desplaza; 
+onload = inicia;
+onscroll = desplaza;
 
-var desplazamiento, contenedor; 
+var desplazamiento, contenedor;
 
 function inicia() {
-contenedor = document.querySelector("main"); 
-document.body.style.height = contenedor.offsetHeight + "px"
+  contenedor = document.querySelector("main");
+  document.body.style.height = contenedor.offsetHeight + "px";
 }
 
 function desplaza() {
-contenedor.style.top = -pageYOffset + "px"; 
+  contenedor.style.top = -pageYOffset + "px";
 }

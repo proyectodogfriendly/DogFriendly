@@ -4,7 +4,7 @@
 	 morado: #b6a7eb
 */
 body {
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
   font-weight: 200;
   font-size: 1.1em;
   overflow-x: hidden;
@@ -23,7 +23,7 @@ a:hover {
   padding: 20px 0;
   z-index: 9999;
   background-color: #fff;
-  transition: all .3s;
+  transition: all 0.3s;
   color: #363636;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(54, 54, 54, 0.93);
   -moz-box-shadow: 0px 4px 5px 0px rgba(54, 54, 54, 0.93);
@@ -90,7 +90,6 @@ a:hover {
   width: 96vw; }
 
 .registro {
-  padding-top: 100px;
   background-color: #f9f9f9;
   background-position: center;
   background-size: cover;
@@ -176,7 +175,7 @@ a:hover {
   z-index: -1; }
 
 .custom + label {
-  color: #8602C0; }
+  color: #8602c0; }
 
 .custom + label {
   border: 1px;
@@ -215,8 +214,8 @@ a:hover {
   background-color: rgba(217, 235, 52, 0.6);
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; }
 
 .form-content {
   padding: 5%;
@@ -238,6 +237,11 @@ a:hover {
 .logo {
   width: 15vw;
   margin-top: 38px; }
+
+.logo2 {
+  width: 15vw;
+  margin-top: 38px;
+  text-align: center; }
 
 .datos1 {
   background-color: red;

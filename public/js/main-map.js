@@ -18,6 +18,13 @@ window.onload = () => {
         //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
         //   anchor: new google.maps.Point(0,0)
       };
+      // var myimage2 = {
+      //   url: "/images/area2.png", //ruta de la imagen
+      //   size: new google.maps.Size(30, 30) //tamaño de la imagen
+      //   //     //   origin: new google.maps.Point(0,0), //origen de la iamgen
+      //   //     //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+      //   //     //   anchor: new google.maps.Point(0,0)
+      // };
       var marker = new google.maps.Marker({
         position,
         map,
