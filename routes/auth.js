@@ -5,18 +5,30 @@ const User = require("../models/User");
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { message: req.flash("error") });
 });
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/auth/user",
     failureRedirect: "/auth/login",
     failureFlash: true,
     passReqToCallback: true
   })
 );
+
+router.get("/user", (req, res, next) => {
+  console.log(req.user)
+  if(req.user && req.user.role ==="ADMIN"){
+    res.render("roles/admin");
+  }
+  else{
+    res.render("roles/user");
+  }
+});
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });

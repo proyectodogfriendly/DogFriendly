@@ -1,0 +1,18 @@
+<div class="container ">
+
+  <a href="/coasters/new" class="btn btn-dark">Añadir un nuevo restaurante</a>
+
+  <h1  class="listado" style="font-weight: 100">Listado de restaurantes</h1>
+
+
+  <hr>
+   {{#each places}}
+
+      <a href="/places/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+      <h4 class="listado-2">{{name}}</h4>
+      <p>{{description}}</p>
+      <small><strong>Longitud: </strong> {{length}} | <strong>Inversiones: </strong> {{inversions}} | <strong>Parque: </strong> {{park_id.name}}</small> 
+      <hr>
+    {{/each}}
+
+</div>
