@@ -69,10 +69,13 @@ window.onload = () => {
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
-
-        marker.addListener("click", function() {
-          infowindow.open(map, markers);
-        });
+        console.log(markers);
+        console.log(infowindow);
+        markers.forEach(marker =>
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          })
+        );
       });
   };
 
@@ -86,6 +89,18 @@ window.onload = () => {
       .then(response => {
         addMarker(response);
         setMapOnAll(map);
+        var contentString = "hola";
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        console.log(markers);
+        console.log(infowindow);
+        markers.forEach(marker =>
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          })
+        );
       });
   };
   // console.log(document.getElementById("barrio").value);
