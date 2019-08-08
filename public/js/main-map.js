@@ -57,39 +57,49 @@ window.onload = () => {
     deleteMarkers();
     let barrio = document.getElementById("barrio").value;
     axios
-      .get("https://dogfriendlyplaces.herokuapp.com/api/district", {
+      .get("http://localhost:3000/api/district", {
         params: { barrio }
       })
       .then(response => {
         addMarker(response);
         setMapOnAll(map);
-
         var contentString = "hola";
-
         var infowindow = new google.maps.InfoWindow({
           content: contentString
         });
-
-        marker.addListener("click", function() {
-          infowindow.open(map, markers);
-        });
+        console.log(markers);
+        console.log(infowindow);
+        markers.forEach(marker =>
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          })
+        );
       });
   };
-
   document.getElementById("btn-area").onclick = () => {
     deleteMarkers();
     let area = document.getElementById("area").value;
     axios
-      .get("https://dogfriendlyplaces.herokuapp.com/api/districta", {
+      .get("http://localhost:3000/api/districta", {
         params: { area }
       })
       .then(response => {
         addMarker(response);
         setMapOnAll(map);
+        var contentString = "hola";
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        console.log(markers);
+        console.log(infowindow);
+        markers.forEach(marker =>
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          })
+        );
       });
   };
   // console.log(document.getElementById("barrio").value);
-
   // btnBarrio.onclick = () => {
   //   show = true;
   //   console.log(barrio);
@@ -383,3 +393,5 @@ window.onload = () => {
   //   marker.setMap(map);
   // });
 };
+
+
