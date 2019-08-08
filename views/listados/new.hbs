@@ -1,0 +1,66 @@
+<br>
+<br><br>
+
+<div class="container-fluid">
+  <div class="row ">
+    <section class="registro">
+      <div class="caja-registro">
+        <div class="caja-texto ">
+          <h2 class="border-right-title">Formulario de<br> restaurante</h2><br>
+          <p>Introduce los datos para crear un nuevo restaurante a la lista de DogFriendly, podrás añadir los datos 
+            que son necesarios para añadirlos a nuestra base de datos.<br>
+            Gracias!
+          </p>
+          <br>
+          <img class="logo" src="../../images/dog-friendly2.png" alt="Logotipo">
+
+        </div>
+        <div class="caja-formulario ">
+          <form action="/new" method="POST" id="form-container">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="name">Nombre del Restaurante</label>
+                  <input id="name" type="text" class="form-control" name="name" placeholder="Escribe tu nombre" value="" />
+                </div>
+                <div class="form-group">
+                  <label for="position">Posición del restaurante</label>
+                  <input id="position" type="text" class="form-control" name="position" placeholder="Escribe la posición " value="" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <label for="address">Dirección</label>
+                  <input id="address" type="text" class="form-control" name="address" placeholder="Escribe la dirección" value="" />
+                </div>
+                <div class="form-group">
+                  <label for="district">Distrito</label>
+                  <input id="district" type="password" class="form-control" name="district" placeholder="Escribe el distrito" value="" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="description">Descripción del restaurante</label>
+                 
+                  <textarea class="form-control" id="description"  placeholder="Escribe la descripción" rows="3"></textarea>
+                </div>
+              </div>
+
+              <div class="col-6">
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <button type="submit" class="btn btn-white">Añadir</button>
+            </div>
+            {{#if message }}
+            <div class="error-message">{{ message }}</div>
+            {{/if}}
+          </form>
+        </div>
+
+      </div>
+  </div>
+  </section>
+</div>
+</div>
