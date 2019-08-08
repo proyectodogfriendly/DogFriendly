@@ -29,6 +29,8 @@ router.get("/user", (req, res, next) => {
   }
 });
 
+
+
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
