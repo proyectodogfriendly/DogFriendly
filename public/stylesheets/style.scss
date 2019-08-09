@@ -85,8 +85,22 @@ a:hover {
 .data {
   padding-top: 50px;
   background-color: #ffffff;
-  height: 100vh;
+  height: 110vh;
   width: 96vw;
+}
+.texto2{
+  font-size: 18px;
+  color:#363636;
+}
+.texto3{
+  font-size: 16px;
+  color:#353535;
+  display: inline;
+}
+.nombreperfil{
+  color: #363636;
+  margin-left: 7vw;
+  text-transform: uppercase;
 }
 #map {
   width: 96vw;
@@ -306,8 +320,9 @@ a:hover {
 }
 .logo2 {
   width: 15vw;
-  margin-top: 38px;
+  margin-top: 20px;
   margin-left: 7vw;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -421,7 +436,7 @@ a:hover {
   margin-top: 2vh;
 }
 #perfil{
-  padding-top: 100px;
+  padding-top: 60px;
   background-color: #ffffff;
   background-image: url('../images/fondo_perfil.png');
   background-position: center;
@@ -437,8 +452,12 @@ a:hover {
 /*   DATOS DE ADMIN  */
 
 #admin{
-  padding-top: 100px;
-  background-color: #f2f2f2;
+  padding-top: 60px;
+  background-color: #ffffff;
+  background-image: url('../images/fondo_perfil.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 75vh;
   width: 96vw;
   margin-left: 20px;
