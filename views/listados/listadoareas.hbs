@@ -1,27 +1,30 @@
-
-<br><br><br><br><br>
+<br>
+<br><br><br><br>
 <div class="container listado">
 
-  <h1  class="listado" style="font-weight: 100">Listado de áreas caninas</h1>
+  <h1 class="listado" style="font-weight: 100">Listado de áreas caninas</h1>
 
   <div class="row">
     <div class="col-8">
-      <hr>
-        {{#each areas}}
+      <hr> {{#each areas}} {{!-- <a href="/areas/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a> --}}
+      <h4 class="listado-2">&nbsp >> Distrito: &nbsp {{district}}</h4>
 
-            {{!-- <a href="/areas/{{_id}}" class="btn btn-sm btn-dark">Ver detalles</a> --}}
-            <h4 class="listado-2">&nbsp >> Distrito: &nbsp {{district}}</h4>
+      <p>&nbsp &nbsp Dirección: {{address}}</p>
 
-            <p>&nbsp &nbsp Dirección: {{address}}</p>
-
-            <hr>
-          {{/each}}
-    </div> 
+      <hr> {{/each}}
+    </div>
 
   </div>
 
-  
 
-  
 
+
+
+</div>
+
+</div>
+<div class="row">
+  <div class="form-group">
+    <a type="submit" href="/" class="btn btn-white-salir">Salir</a>
+  </div>
 </div>

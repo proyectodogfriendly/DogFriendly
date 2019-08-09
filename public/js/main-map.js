@@ -2,29 +2,80 @@ window.onload = () => {
   let show = false;
   var markers = [];
   var myLatLng = { lat: 40.413031, lng: -3.696575 };
+
+  var map, infoWindow;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: myLatLng,
+      zoom: 6
+    });
+    infoWindow = new google.maps.InfoWindow();
+
+    // User geolocation
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("Tu estás aquí");
+          infoWindow.open(map);
+          map.setCenter(pos);
+        },
+        function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        }
+      );
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }
+  initMap(map);
+
+  // Data for includes in google maps and makers
+
   let btnBarrio = document.getElementById("btn-barrio");
   const addMarker = data => {
-    //console.log(data);
+    console.log(data);
     for (let i = 0; i < data.data.length; i++) {
       var position = new google.maps.LatLng(
         data.data[i].position.coordinates[1],
         data.data[i].position.coordinates[0]
       );
       var title = data.data[i].district;
-      var myimage = {
-        url: "/images/huella2.png", //ruta de la imagen
-        size: new google.maps.Size(30, 30) //tamaño de la imagen
-        //   origin: new google.maps.Point(0,0), //origen de la iamgen
-        //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
-        //   anchor: new google.maps.Point(0,0)
-      };
-      // var myimage2 = {
-      //   url: "/images/area2.png", //ruta de la imagen
-      //   size: new google.maps.Size(30, 30) //tamaño de la imagen
-      //   //     //   origin: new google.maps.Point(0,0), //origen de la iamgen
-      //   //     //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
-      //   //     //   anchor: new google.maps.Point(0,0)
-      // };
+      if (data.data[i].description) {
+        var myimage = {
+          url: "/images/huella2.png", //ruta de la imagen
+          size: new google.maps.Size(30, 30) //tamaño de la imagen
+          //   origin: new google.maps.Point(0,0), //origen de la iamgen
+          //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+          //   anchor: new google.maps.Point(0,0)
+        };
+      } else {
+        var myimage = {
+          url: "/images/area2.png", //ruta de la imagen
+          size: new google.maps.Size(30, 30) //tamaño de la imagen
+          //   origin: new google.maps.Point(0,0), //origen de la iamgen
+          //el ancla de la imagen, el punto donde esta marcando, en nuestro caso el centro inferior.
+          //   anchor: new google.maps.Point(0,0)
+        };
+      }
+
       var marker = new google.maps.Marker({
         position,
         map,
@@ -53,6 +104,7 @@ window.onload = () => {
     clearMarkers();
     markers = [];
   };
+
   document.getElementById("btn-barrio").onclick = () => {
     deleteMarkers();
     let barrio = document.getElementById("barrio").value;
@@ -64,7 +116,10 @@ window.onload = () => {
         addMarker(response);
         setMapOnAll(map);
 
-        var contentString = "hola";
+        var contentString =
+          "RESTAURANTE DOG FRIENDLY" +
+          "<br>" +
+          "<a href='https://soyunperro.com/' target='_blank'> https://soyunperro.com </a>";
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
@@ -89,7 +144,10 @@ window.onload = () => {
       .then(response => {
         addMarker(response);
         setMapOnAll(map);
-        var contentString = "hola";
+        var contentString =
+          "AREA CANINA DOG FRIENDLY" +
+          "<br>" +
+          "<a href='https://simiperrohablara.com/' target='_blank'> https://simiperrohablara.com/ </a>";
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString

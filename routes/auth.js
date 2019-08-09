@@ -20,16 +20,13 @@ router.post(
 );
 
 router.get("/user", (req, res, next) => {
-  console.log(req.user)
-  if(req.user && req.user.role ==="ADMIN"){
-    res.render("roles/admin");
-  }
-  else{
-    res.render("roles/user");
+  console.log(req.user, "usuario logeado");
+  if (req.user && req.user.role === "ADMIN") {
+    res.render("roles/admin", { user: req.user });
+  } else {
+    res.render("roles/user", { user: req.user });
   }
 });
-
-
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");

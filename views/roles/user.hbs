@@ -1,6 +1,5 @@
-
-
 <br>
+
 <br>
 <br>
 <br>
@@ -11,25 +10,25 @@
 <section id="perfil">
   <div class="container-fluid">
     <div class="row">
-          <div class="col-5">
-            <h1 class="border-right-title"> Bienvenido a tu perfil {{username}}</h1>
-            <img class="logo2" src="../../images/dog-friendly2.png" alt="Logotipo">
-          </div>
-          <div class="col-7 datos-perfil">
-            <h4>Estos son tus datos</h4>
-            <p>Nombre: </p>
-            <p>Apellidos: </p>
-            <p>Email:</p>
-            <p>Password:</p>
-            <p>Nombre de tu perr@: </p>
-            <p>Edad de tu perr@: </p>
-          </div>
+      <div class="col-5">
+        <h2 class="border-right-title"> Bienvenido a tu perfil</h2>
+        <h1>{{user.username}}</h1>
+        <img class="logo2" src="../../images/dog-friendly2.png" alt="Logotipo">
+      </div>
+      <div class="col-7 datos-perfil">
+        <h4>Estos son tus datos</h4>
+        <p>Nombre: {{user.username}} </p>
+        <p>Apellidos: {{user.surname}} </p>
+        <p>Email: {{user.email}}</p>
+        <p>Esta es tu password hasheada (si no entiendes nada ¡es por tu seguridad!): {{user.password}}</p>
+        <p>Nombre de tu perr@: {{user.nameDog}} </p>
+        <p>Edad de tu perr@: {{user.ageDog}} </p>
+      </div>
     </div>
     <div class="row">
-        <div class="form-group">
-            <button type="submit" class="btn btn-white-salir">Salir</button>
-        </div>
+      <div class="form-group">
+        <a type="submit" href="/" class="btn btn-white-salir">Salir</a>
+      </div>
     </div>
   </div>
 </section>
-
