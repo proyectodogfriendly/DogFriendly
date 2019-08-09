@@ -20,7 +20,7 @@ a:hover {
   text-transform: uppercase;
   position: fixed;
   width: 100%;
-  padding: 20px 0;
+  padding: 5px 0;
   z-index: 9999;
   background-color: #fff;
   transition: all 0.3s;
@@ -54,14 +54,14 @@ a:hover {
   color: inherit; }
 
 .bg-video {
-  padding-top: 100px;
+  padding-top: 80px;
   margin-left: 0px;
   margin-right: 0px;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 96vw;
   z-index: 5;
-  height: 100vh; }
+  height: 96vh; }
 
 .nosotros {
   padding-top: 150px;
@@ -70,7 +70,7 @@ a:hover {
   width: 96vw; }
 
 .data {
-  padding-top: 110px;
+  padding-top: 50px;
   background-color: #ffffff;
   height: 100vh;
   width: 96vw; }
@@ -96,7 +96,11 @@ a:hover {
   width: 96vw; }
 
 .registro {
-  background-color: #f9f9f9;
+  background-color: #fff;
+  background-image: url("../images/fondo5.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 100vh;
@@ -342,78 +346,45 @@ a:hover {
   display: flex; }
 
 /* ----- REVEAL EFFECTS ----- */
-.revealss.fadeInUp.visible2 {
-  background-color: orange;
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 3s;
-  transform: translateY(20px); }
-
-.revealss.fadeInUp.visible {
-  background-color: blue;
-  transform: translateY(0);
-  transition-property: all;
-  transition-duration: 3s;
+.noBlock {
   opacity: 0; }
 
-.revealss.fadeInUp {
-  background-color: blue;
-  transform: translateY(0);
+#redScrollDiv {
   opacity: 1; }
 
-.revealss.fadeInLeft.visible2 {
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 2s;
-  transform: translateX(-30px);
-  background-color: green; }
-
-.revealss.fadeInLeft.visible2 {
-  transform: translate(0);
+#imgScrollDiv {
   opacity: 1;
-  background-color: pink; }
+  width: 25%; }
 
-.revealss.fadeInRight {
-  opacity: 0;
+.imagen {
+  width: 75%; }
+
+.parrafo {
+  opacity: 1;
+  color: #353535;
   transition-property: all;
-  transition-duration: 2s;
-  transform: translateY(-10px); }
+  transition-duration: 3s;
+  transform: translateX(60px); }
 
-.revealss.fadeInRight.visible {
-  transform: translateX(0);
-  opacity: 1; }
+.parrafo2 {
+  opacity: 0;
+  color: #353535;
+  transition-property: all;
+  transition-duration: 3s;
+  transform: translateY(70px); }
 
 /* ----- SCREEN ----- */
-.screen-scene {
-  position: relative;
-  transition: transform 2s 2s;
-  transform-style: preserve-3d; }
-
-.screen-scene.visible {
-  transform: rotateX(50deg) rotateZ(15deg); }
-
-.screen-scene img {
-  width: 100%;
-  transition: transform 2s; }
-
-.screen-scene img:nth-child(2), .screen-scene img:nth-child(3) {
-  position: absolute;
-  top: 0;
-  left: 0; }
-
-.screen-scene.visible img:nth-child(2) {
-  transform: translateZ(60px); }
-
-.screen-scene.visible img:nth-child(3) {
-  transform: translateZ(120px); }
-
 /*   DATOS DE PERFIL  */
 .boton-busc {
   margin-top: 2vh; }
 
 #perfil {
   padding-top: 100px;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
+  background-image: url("../images/fondo_perfil.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 75vh;
   width: 96vw;
   margin-left: 20px; }

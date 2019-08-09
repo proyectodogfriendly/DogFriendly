@@ -42,17 +42,23 @@
   window.onscroll = () => {
 
       winScroll = window.scrollY
-
-       // Reveal effects
-       document.querySelectorAll('.reveal').forEach(el => {
-        isInViewport(el) ? el.classList.add('visible2') : el.classList.remove('visible2')
-    })
+        const redDiv = document.getElementById("redScrollDiv")
+    //    // Reveal effects
+    //    document.querySelectorAll('.reveal').forEach(el => {
+    //     isInViewport(el) ? el.classList.add('visible2') : el.classList.remove('visible2')
+    // })
 
       // Navbar morph
       winScroll > 100 ?
-      navigation.classList.add('sticky') :
-      navigation.classList.remove('sticky')
+      navigation.classList.add('sticky') :navigation.classList.remove('sticky');
       
+      winScroll > 400 ?
+      redDiv.classList.add('parrafo') : redDiv.classList.remove('parrafo');
+
+      winScroll > 350 ?
+      imgScrollDiv.classList.add('parrafo2') : imgScrollDiv.classList.remove('parrafo2');
+      
+
   }
 
 
