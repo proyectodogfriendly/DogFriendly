@@ -133,7 +133,6 @@ window.onload = () => {
         );
       });
   };
-
   document.getElementById("btn-area").onclick = () => {
     deleteMarkers();
     let area = document.getElementById("area").value;
@@ -162,7 +161,6 @@ window.onload = () => {
       });
   };
   // console.log(document.getElementById("barrio").value);
-
   // btnBarrio.onclick = () => {
   //   show = true;
   //   console.log(barrio);

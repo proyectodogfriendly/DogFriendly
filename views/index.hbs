@@ -17,9 +17,24 @@
     <div class="container-fluid">
       <div class="row">
         <section class="nosotros">
-          <div class="">
-            Sobre nosotros
-          </div>
+          <div class="container">
+              <div class="row justify-content-between">
+                <div class="col-sm-4" id="redScrollDiv">
+                    <h2>Restaurantes<br> DogFriendly</h2>
+                    <hr>
+                    <p>Somos una red completa de restaurantes en Madrid, encuentras los mejores bares, cafés y restaurantes para merendar con perr@.
+                      Lugares donde siempre hay agua para los canes y seguro que algún mimo también.
+                      En estos locales te reciben con una sonrisa extra si entras con tu perr@ y podrás desayunar, merendar, 
+                      tomar un café o unos vinos... y ser feliz, con tu can a tu vera.
+                    </p>
+                </div>
+                <div class="col-sm-6 " id="imgScrollDiv">
+                    <div >
+                        <img src="images/dog-friendly2.png" class="imagen"  alt="Logotipo">  
+                    </div>
+                </div>
+              </div>
+            </div>
         </section>
       </div>
     </div>
@@ -35,6 +50,7 @@
     </div>
     <div class="container-fluid">
       <div class="row justify-space-around espacio">
+       
         <div class="col-md-3 center-block">
           <p class="titulo">
             Buscar restaurantes por distrito <br>
@@ -46,8 +62,12 @@
               <option value="{{this}}">{{this}}</option>
               {{/each}}
             </select>
-            <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
+            
             {{!-- </form> --}}
+        </div>
+        <div class="col-md-3 boton-busc">
+          <br>
+          <button id="btn-barrio" type="submit " class="btn btn-white ">BUSCAR</button>
         </div>
         <div class="col-md-3 center-block">
           <p class="titulo">
@@ -60,24 +80,28 @@
               <option value="{{this}}">{{this}}</option>
               {{/each}}
             </select>
-            <button id="btn-area" type="submit " class="btn btn-white ">BUSCAR</button>
+            
           </form>
         </div>
-        <div class="col-md-3 center-block">
+        {{!-- <div class="col-md-3 center-block">
           <p class="titulo">
             Mostrar restaurantes <br>
           </p>
           <form method="POST" action="" class="login-form formulario">
             <button type="submit" class="btn btn-white">Mostrar</button>
           </form>
-        </div>
-        <div class="col-md-3 center-block">
+        </div> --}}
+        {{!-- <div class="col-md-3 center-block">
           <p class="titulo">
             Mostrar áreas caninas <br>
           </p>
           <form method="POST" action="" class="login-form formulario">
             <button type="submit" class="btn btn-white">Mostrar</button>
           </form>
+        </div> --}}
+        <div class="col-md-3 boton-busc">
+          <br>
+            <button id="btn-area" type="submit " class="btn btn-white ">BUSCAR</button>
         </div>
       </div>
     </div>
@@ -85,48 +109,169 @@
   <section class="hero" id="data">
     <div class="container-fluid">
       <div class="row">
-        <section class="nosotros">
-          <div class="">
-            Sobre nosotros
-          </div>
+        <section class="data">
+          <div class="container">
+            <div class="row flex-container">
+                <div class="col-2">
+                    <div class="div-img hidden">
+                      <img class="img flex-item" src="../../images/1.png" title="YORK" alt="YORK">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="div-img hidden">
+                      <img class="img flex-item" src="../../images/2.png" title="GOLDEN" alt="GOLDEN">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="div-img hidden">
+                      <img class="img flex-item" src="../../images/3.png" title="2" alt="2">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="div-img hidden">
+                      <img class="img flex-item" src="../../images/4.png" title="2" alt="2">
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="div-img hidden">
+                      <img class="img flex-item" src="../../images/5.png" title="2" alt="2">
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-container">
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/6.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/7.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/8.png" title="2" alt="2">
+                  </div>
+              </div>
+               <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/9.png" title="2" alt="2">
+                  </div>
+              </div>
+               <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/10.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/11.png" title="2" alt="2">
+                  </div>
+              </div>
+            </div>
+            <div class="row flex-container">
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/12.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/13.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/14.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/15.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/16.png" title="2" alt="2">
+                  </div>
+              </div>
+            </div> 
+            <div class="row flex-container">
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/17.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/18.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/19.png" title="2" alt="2">
+                  </div>
+              </div>
+               <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/20.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/21.png" title="2" alt="2">
+                  </div>
+              </div>
+              <div class="col-2">
+                  <div class="div-img hidden">
+                    <img class="img flex-item" src="../../images/22.png" title="2" alt="2">
+                  </div>
+              </div>
+            </div>
         </section>
       </div>
+
     </div>
+    <br>
   </section>
 
 
 
 
-  <footer class="page-footer">
-    <div class="container-fluid">
-      <div class="row justify-content-between">
-        <div class="col-md-4 col-center">
-        </div>
-        <div class="col-md-4 iconos-redes">
-          <!-- Facebook -->
-          <a class="fb-ic">
-            <img src="../../images/face.png" alt="facebook" class="redes">
-          </a>
-          <!-- Twitter -->
-          <a class="tw-ic">
-            <img src="../../images/tw.png" alt="facebook" class="redes">
-          </a>
-          <!-- Google +-->
-          <a class="gplus-ic">
-            <img src="../../images/what.png" alt="facebook" class="redes">
-          </a>
-          <!--Linkedin -->
-          <a class="li-ic">
-            <img src="../../images/ins.png" alt="facebook" class="redes">
-          </a>
-          <!--Instagram-->
-          <a class="ins-ic">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-        </div>
-        <div class="col-md-4 col-center">
-        </div>
-      </div>
-    </div>
+  <footer class="my-5 pt-2 text-muted text-center text-small">
+        
+        <ul class="list-inline">
+          <li class="list-inline-item">
+              <a href="#">
+                  <a class="fb-ic">
+                    <img src="../../images/face.png" alt="facebook" class="redes">
+                  </a>
+              </a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#">
+                  <a class="fb-ic">
+                    <img src="../../images/tw.png" alt="facebook" class="redes">
+                  </a>
+              </a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#">
+                  <a class="fb-ic">
+                    <img src="../../images/what.png" alt="facebook" class="redes">
+                  </a>
+              </a>
+          </li>
+          <li class="list-inline-item">
+              <a href="#">
+                  <a class="fb-ic">
+                    <img src="../../images/ins.png" alt="facebook" class="redes">
+                  </a>
+              </a>
+          </li>
+        </ul>
+        <span class="mb-1">&copy; 2019 Dog Friendly Places</span>
   </footer>
+  
 </main>
