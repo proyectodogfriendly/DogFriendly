@@ -263,10 +263,15 @@ a:hover {
   display: block;
 }
 
+
+
+
 .custom:focus + label,
 .custom + label:hover {
   border-color: #722040;
 }
+
+
 
 .custom + label span {
   width: 71%;
